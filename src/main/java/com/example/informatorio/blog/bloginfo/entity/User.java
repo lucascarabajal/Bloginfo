@@ -2,12 +2,12 @@ package com.example.informatorio.blog.bloginfo.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedBy;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class User {
@@ -21,14 +21,14 @@ public class User {
     @Column(nullable = false, length = 150)
     private String last_name;
 
-    @Column(nullable = false, length = 100)
+    @Column(unique= true, nullable = false, length = 100)
     private String email;
 
     @Column(length = 100)
     @JsonIgnore
     private String password;
 
-    @Column
+    @Column()
     @CreationTimestamp
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate registerDate;
@@ -41,6 +41,10 @@ public class User {
 
     @Column(nullable = false, length = 100)
     private String state;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Post> usPost;
+
 
     public void setId(Long id) {
         this.id = id;
@@ -112,6 +116,15 @@ public class User {
 
     public void setRegisterDate(LocalDate registerDate) {
         this.registerDate = registerDate;
+    }
+
+    @JsonManagedReference
+    public List<Post> getUsPost() {
+        return usPost;
+    }
+
+    public void setUsPost(List<Post> usPost) {
+        this.usPost = usPost;
     }
 
 }
