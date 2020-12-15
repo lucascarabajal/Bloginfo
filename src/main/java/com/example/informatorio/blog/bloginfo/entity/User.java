@@ -1,9 +1,13 @@
 package com.example.informatorio.blog.bloginfo.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedBy;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 public class User {
@@ -25,12 +29,12 @@ public class User {
     private String password;
 
     @Column
-    java.util.Date d = new java.util.Date();
-    java.sql.Date date = new java.sql.Date(d.getTime());
+    @CreationTimestamp
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate registerDate;
 
     @Column(nullable = false, length = 100)
     private String city;
-
 
     @Column(nullable = false, length = 100)
     private String country;
@@ -102,11 +106,12 @@ public class User {
         return state;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalDate getRegisterDate() {
+        return registerDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setRegisterDate(LocalDate registerDate) {
+        this.registerDate = registerDate;
     }
+
 }

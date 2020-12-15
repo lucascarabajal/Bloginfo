@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,5 +59,13 @@ public class UserService {
         } else {
             throw new ResourceNotFoundException("Usuario no encontrado con Id "+user.getId());
         }
+    }
+
+    public List<User> getUsersForCity(String city) {
+        return userRepository.getUsersForCity(city);
+    }
+
+    public List<User> getUserFromRegisterDate(LocalDate date){
+        return userRepository.getUserForRegisterDate(date);
     }
 }
