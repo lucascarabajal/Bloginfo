@@ -2,10 +2,12 @@ package com.example.informatorio.blog.bloginfo.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -13,13 +15,13 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false, length = 50)
     private String title;
 
-    @Column
+    @Column( length = 150)
     private String description;
 
-    @Column
+    @Column(nullable = false)
     private String content;
 
     @Column
@@ -27,12 +29,17 @@ public class Post {
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate creationDate;
 
-    @Column
+    @Column(nullable = false)
     private Boolean published;
 
     @ManyToOne
-    @JoinColumn(name="fk_user")
+    @JoinColumn(name="fk_user",nullable = false)
+    @JsonBackReference("userPost")
     private User user;
+
+    @OneToMany(mappedBy = "postComment", cascade = CascadeType.ALL)
+    @JsonManagedReference("postComment")
+    private List<Comment> postComment;
 
     public Long getId() {
         return id;
@@ -82,12 +89,20 @@ public class Post {
         this.published = published;
     }
 
-    @JsonBackReference
+
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Comment> getPostComment() {
+        return postComment;
+    }
+
+    public void setPostComment(List<Comment> postComment) {
+        this.postComment = postComment;
     }
 }

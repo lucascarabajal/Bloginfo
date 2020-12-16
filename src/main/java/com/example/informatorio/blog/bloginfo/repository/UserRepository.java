@@ -12,6 +12,6 @@ public interface UserRepository extends JpaRepository<User,Long> {
     @Query("select u from User u where u.city = :city")
     public List<User> getUsersForCity(@Param("city") String city);
 
-    @Query("SELECT u FROM User u WHERE u.registerDate = :date")
+    @Query("SELECT u FROM User u WHERE u.registerDate > :date")
     public List<User> getUserForRegisterDate(@Param("date")LocalDate date);
 }

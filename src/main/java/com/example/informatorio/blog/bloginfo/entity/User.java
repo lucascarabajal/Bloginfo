@@ -43,7 +43,12 @@ public class User {
     private String state;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference("userPost")
     private List<Post> usPost;
+
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    @JsonManagedReference("userComment")
+    private List<Comment> usComment;
 
 
     public void setId(Long id) {
@@ -118,7 +123,6 @@ public class User {
         this.registerDate = registerDate;
     }
 
-    @JsonManagedReference
     public List<Post> getUsPost() {
         return usPost;
     }
@@ -127,4 +131,11 @@ public class User {
         this.usPost = usPost;
     }
 
+    public List<Comment> getUsComment() {
+        return usComment;
+    }
+
+    public void setUsComment(List<Comment> usComment) {
+        this.usComment = usComment;
+    }
 }
