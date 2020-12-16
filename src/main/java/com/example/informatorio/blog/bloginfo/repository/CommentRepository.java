@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CommentRepository extends JpaRepository<Comment, Long> {
-    @Query(value="SELECT * FROM Comment WHERE post_id =: id_post ORDER BY id DESC LIMIT: lim", nativeQuery = true)
-    public List<Comment> filterComments(@Param("lim") Long lim);
+    @Query(value="SELECT * FROM Comment WHERE fk_post = :id_post ORDER BY id DESC LIMIT :lim", nativeQuery = true)
+    public List<Comment> getFilterComments(@Param("id_post")Long id_post,@Param("lim") Integer lim);
 }

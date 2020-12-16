@@ -23,7 +23,7 @@ public class CommentController {
 
     @GetMapping
     public ResponseEntity<List<Comment>> getComment(){
-        return commentService.getComment();
+        return ResponseEntity.ok().body(commentService.getComment());
     }
 
     @RequestMapping("{id}")
@@ -42,8 +42,11 @@ public class CommentController {
         return commentService.deleteCommentById(id);
     }
 
-    @RequestMapping("/comment/{lim}")
-    public ResponseEntity<List<Comment>> filterComments(@PathVariable("lim") Long lim) {
-        return ResponseEntity.ok().body(commentService.filterComments(lim));
+    @GetMapping("/filter")
+    public ResponseEntity<List<Comment>> getFilterComments(@RequestParam(value="id_post")Long id_post,@RequestParam(value = "lim",required = false) Integer lim) {
+        if (lim == null){
+            lim = commentService.getComment().size();
+        }
+        return ResponseEntity.ok().body(commentService.getFilterComments(id_post,lim));
     }
 }

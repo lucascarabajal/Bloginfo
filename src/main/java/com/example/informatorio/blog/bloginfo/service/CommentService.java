@@ -21,9 +21,9 @@ public class CommentService {
         return ResponseEntity.ok(newComment);
     }
 
-    public ResponseEntity<List<Comment>> getComment(){
+    public List<Comment> getComment(){
         List<Comment> comments = commentRepositoy.findAll();
-        return ResponseEntity.ok(comments);
+        return comments;
     }
 
     public ResponseEntity<Comment> getCommentById(Long id){
@@ -53,8 +53,8 @@ public class CommentService {
         }
     }
 
-    public List<Comment> filterComments(Long lim) {
-        return commentRepositoy.filterComments(lim);
+    public List<Comment> getFilterComments(Long id_post, Integer lim) {
+        return commentRepositoy.getFilterComments(id_post,lim);
     }
 
 
