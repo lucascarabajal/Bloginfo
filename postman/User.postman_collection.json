@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "49cd9d57-7435-45f0-a974-9f378df9d5b9",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CargarUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lucas\",\r\n    \"last_name\": \"Carabajal\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"fghfghgfhfgh@gmail.com\",\r\n    \"city\": \"Saenz Peña\",\r\n    \"state\": \"Chaco\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MostrarUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"xdxdxd\",\r\n    \"last_name\": \"xddxddx\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"fghfghgfhfgh@gmail.com\",\r\n    \"city\": \"Saenz Peña\",\r\n    \"state\": \"Chaco\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultarCiudadUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/user/ciudad/Quitilipi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"ciudad",
+						"Quitilipi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultarFechaUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lucas\",\r\n    \"last_name\": \"xddxddx\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"fghfghgfhfgh@gmail.com\",\r\n    \"city\": \"Quitilipi \",\r\n    \"state\": \"Chaco\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/user/fecha-creacion/15-12-2020",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"fecha-creacion",
+						"15-12-2020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModificarUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lucas\",\r\n    \"last_name\": \"xddxddx\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"fghfghgfhfgh@gmail.com\",\r\n    \"city\": \"Quitilipi \",\r\n    \"state\": \"Chaco\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lucas\",\r\n    \"last_name\": \"xddxddx\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"fghfghgfhfgh@gmail.com\",\r\n    \"city\": \"Quitilipi \",\r\n    \"state\": \"Chaco\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

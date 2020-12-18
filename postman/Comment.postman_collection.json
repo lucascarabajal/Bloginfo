@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "3e27a1a0-d365-425d-af77-6818173089b3",
+		"name": "Comment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CargarComment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"Las primeras eran las mejores\",    \r\n    \"author\": {\"id\": 1},\r\n    \"postComment\":{\"id\":1}\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MostrarComment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"xdxdxd\",\r\n    \"last_name\": \"xddxddx\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"fghfghgfhfgh@gmail.com\",\r\n    \"city\": \"Saenz Peña\",\r\n    \"state\": \"Chaco\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MostrarCommentFilter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"xdxdxd\",\r\n    \"last_name\": \"xddxddx\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"fghfghgfhfgh@gmail.com\",\r\n    \"city\": \"Saenz Peña\",\r\n    \"state\": \"Chaco\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/comment/filter?id_post=1&lim=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"comment",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "id_post",
+							"value": "1"
+						},
+						{
+							"key": "lim",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateComment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"Buena Peli le falta acción\",    \r\n    \"author\": {\"id\": 1},\r\n    \"postComment\":{\"id\":1}\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteComment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lucas\",\r\n    \"last_name\": \"xddxddx\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"fghfghgfhfgh@gmail.com\",\r\n    \"city\": \"Quitilipi \",\r\n    \"state\": \"Chaco\",\r\n    \"country\": \"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
