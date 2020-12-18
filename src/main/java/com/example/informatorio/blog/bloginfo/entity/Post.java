@@ -41,6 +41,7 @@ public class Post {
     @JsonManagedReference("postComment")
     private List<Comment> postComment;
 
+
     public Long getId() {
         return id;
     }
