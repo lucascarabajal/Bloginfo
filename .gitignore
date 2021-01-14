@@ -18,9 +18,8 @@ target/
 *.iws
 *.iml
 *.ipr
-mvnw
-mvnw.cmd
-pom.xml
+
+
 C:\Users\Lukiz\Desktop\bloginfo\src\main\java\com\example\informatorio\blog\bloginfo/BloginfoApplication
 .mvn/wrapper/MavenWrapperDownloader.java
 ### NetBeans ###
